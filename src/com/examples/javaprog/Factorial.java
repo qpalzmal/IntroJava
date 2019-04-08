@@ -20,7 +20,7 @@ public class Factorial {
     }
 
     private static int factorial(int number, String sign) {
-        if (sign.toLowerCase().equals("positive")) {  // factorial if the given number is positive
+        if (sign.equalsIgnoreCase("positive")) {  // factorial if the given number is positive
             if (number <= 0) {
                 return 1;
             } else {
