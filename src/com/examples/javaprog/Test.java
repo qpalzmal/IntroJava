@@ -1,11 +1,10 @@
 package com.examples.javaprog;
 import java.util.Scanner;
 
-public class Test {
-    public static void main(String[] args) {
-        System.out.println("REEE");
-    }
-}
+//public class Test {
+//    public static void main(String[] args) {
+//    }
+//}
 
 class FizzBuzz {
     public static void main(String[] args) {
@@ -13,11 +12,11 @@ class FizzBuzz {
         System.out.print("Enter any integer: ");  // user inputs a number for the program to go up to
         int user_num = s.nextInt();
 
-        if (user_num > 0) {
+        if (user_num > 0) {  // used with positive number to check for 0 to given number
             for (int i = 0; i < user_num; i++) {
                 checker(i);
             }
-        } else {
+        } else {  // used with negative number to check given number to 0
             for (int i = 0; i > user_num; i--) {
                 checker(i);
             }
@@ -43,11 +42,11 @@ class MultiplicationTable {
         System.out.print("Enter the size of the multiplication table: ");
         int size = s.nextInt();
 
-        for (int i = 1; i <= size; i++) {
-            System.out.println();
-            for (int j = 1; j <= size; j++) {
-                System.out.print(" " + (i * j));
+        for (int row = 1; row <= size; row++) {
+            for (int column = 1; column <= size; column++) {
+                System.out.print(" " + (row * column));
             }
+            System.out.println();
         }
     }
 }
@@ -58,31 +57,29 @@ class Factorial {
         System.out.print("Enter any number for the factorial: ");
         int user_num = s.nextInt();
 
-        String sign_num = "";
+        String sign_num;
 
         if (user_num >= 0) {
-            sign_num += "positive";
+            sign_num = "positive";
         } else {
-            sign_num += "negative";
+            sign_num = "negative";
         }
 
-        System.out.println(factorial(user_num, 1, sign_num));
+        System.out.println(factorial(user_num, sign_num));
     }
 
-    private static int factorial(int number, int total, String sign) {
-        if (sign.toLowerCase().equals("positive")) {
+    private static int factorial(int number, String sign) {
+        if (sign.toLowerCase().equals("positive")) {  // factorial if the given number is positive
             if (number <= 0) {
-                return total;
+                return 1;
             } else {
-                total *= number;
-                return factorial(number -= 1, total, sign);
+                return number *= factorial(number -= 1, sign);
             }
-        } else {
+        } else {  // factorial if the given number is negative
             if (number >= 0) {
-                return total;
+                return 1;
             } else {
-                total *= number;
-                return factorial(number += 1, total, sign);
+                return number *= factorial(number += 1, sign);
             }
         }
     }
