@@ -14,7 +14,7 @@ public class Palindrome {
         String last_half = "";
 
         for (int i = 0; i < len / 2; i++) {
-             last_half += ((word.charAt(len - (i + 1))));
+            last_half += ((word.charAt(len - (i + 1))));
         }
         if (first_half.equalsIgnoreCase(last_half)) {
             System.out.println("Your word is a palindrome");
