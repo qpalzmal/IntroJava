@@ -15,7 +15,7 @@ public class Questions implements ActionListener {
 
     private void start() {
         JFrame frame = new JFrame();
-        button = new JButton("Type \"apple\" then click me")
+        button = new JButton("Type \"apple\" then click me");
         button.addActionListener(this);  // adds this object button to list of listeners
 
         text_field = new JTextField();
@@ -31,6 +31,8 @@ public class Questions implements ActionListener {
     public void actionPerformed(ActionEvent Event) {
         if (text_field.getText().equalsIgnoreCase("apple")) {  // if the text box has "apple" written in
             button.setText("Good job.");  // make the button say "good job"
+        } else {
+            button.setText(":(");
         }
     }
 }
