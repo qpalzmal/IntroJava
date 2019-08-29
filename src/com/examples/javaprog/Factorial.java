@@ -8,29 +8,21 @@ public class Factorial {
         System.out.print("Enter any number for the factorial: ");
         int user_num = s.nextInt();
 
-        String sign_num;
-
-        if (user_num >= 0) {
-            sign_num = "positive";
-        } else {
-            sign_num = "negative";
-        }
-
-        System.out.println(factorial(user_num, sign_num));
+        System.out.println(factorial(user_num));
     }
 
-    private static int factorial(int number, String sign) {
-        if (sign.equalsIgnoreCase("positive")) {  // factorial if the given number is positive
+    private static int factorial(int number) {
+        if (number >= 0) {  // factorial if the given number is positive
             if (number <= 0) {
                 return 1;
             } else {
-                return number *= factorial(number -= 1, sign);
+                return number *= factorial(number -= 1);
             }
         } else {  // factorial if the given number is negative
             if (number >= 0) {
                 return 1;
             } else {
-                return number *= factorial(number += 1, sign);
+                return number *= factorial(number += 1);
             }
         }
     }
