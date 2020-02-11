@@ -1,5 +1,3 @@
-package com.examples.javaprog;
-
 import java.util.Scanner;
 
 public class FizzBuzz {
